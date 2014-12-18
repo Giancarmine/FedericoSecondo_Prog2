@@ -1,6 +1,6 @@
 #include "stdio.h"
 
-float MediaAritmetica(int Array[], int N);
+float MediaAritmetica(int Array[], int N, int* Cont);
 
 /*==============================================================================
 
@@ -9,7 +9,7 @@ Autore      : Carmine Cuofano		Matricola: N86001700
 Programma   : Media di un Array di int ordinato (SelectionSort)
 Data        : 01/12/2014
 
-To Do:  -NoComplete-
+To Do:  -DaTestare-
 - Aggiungere alla Sub del Selection Sort
     - La media deve essere solo per le cifre pari 
     - Conta il numero di valori di cui si è fatta la media
@@ -22,6 +22,7 @@ main ()
     int     Array [100];
     int     i,
             k,
+            Cont,
             N;
     float   Media;
 
@@ -39,7 +40,7 @@ main ()
     scanf ("%d",&k);
     
     //Chiamata delle function
-    Media = MediaAritmetica( Array, k);
+    Media = MediaAritmetica( Array, k, &Cont);
     //Stampo del risultato
     printf("\nIl risultato e:%d",Media);
 }
@@ -62,14 +63,18 @@ void selectionSort(int A[], int k) {
   }
 }
 
-float MediaAritmetica(int Array[], int N){
+float MediaAritmetica(int Array[], int N, int* Cont){
     int     i;
     float   Media;
 
-    for(Media=i=0; i<N; i++){
-        Media = Media + Array[i];
+    for(Media=i=Cont=0; i<N; i++){
+        if(Array[i]/2)
+        {
+            Media = Media + Array[i];
+            Cont++
+        }
     }
-    Media = Media/N;
+    Media = Media/Cont;
 
     return Media;
 }
