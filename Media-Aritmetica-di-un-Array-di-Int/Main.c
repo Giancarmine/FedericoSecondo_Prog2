@@ -71,10 +71,10 @@ float MediaAritmetica(int Array[], int N, int* Cont){
         if(Array[i]/2)
         {
             Media = Media + Array[i];
-            Cont++
+            &Cont++
         }
     }
-    Media = Media/Cont;
+    Media = Media/&Cont;
 
     return Media;
 }
