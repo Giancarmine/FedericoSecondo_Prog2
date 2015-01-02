@@ -1,4 +1,5 @@
 /*-----------------ESERCIZI DA SVOLGERE E CONSEGNARE ENTRO IL 10 GENNAIO 2015----------------------*/
+
 	Completi di Implementazione C/C++, funzione in P-LIKE e documentazione
 	
 	1 - Ordinamento di un array mediante il metodo di insertion sort
