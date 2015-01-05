@@ -2,21 +2,22 @@
 
 
 Autore  	    : Carmine Cuofano											Matricola: N86001700
-Programma   	: Inversione di un array
-Data    		: 02/01/2015
+Programma   	: trasposizione di un matrice
+Data    		: 03/01/2015
 
 -----------------------------------------------------------------------------------------------------*/
 
 
-function inversione(in: Array, N)
-	var Array :array [1....n] of integer
-	var N, i, j, App :integer
+function trasposizione(in: Array, Mc)
+	var Matrice :array [1....Mc,1....Mr] of integer
+	var Mc, i, j, f, App :integer
 	begin
-		for i:=1, j:=N to i < N/2 do
-			App:=Array(i)
-			Array(i):=Array(j)
-			Array(j):=App
-			j:=j-1
+		for i:=1 to Mc do
+			for j:=1, f:=Mc-1 to f do
+				App:=Array(i)(j)
+				Array(i)(j):=Array(i)(f)
+				Array(i)(f):=App
+			end for
 		end for
 	end
-end inversione
+end trasposizione

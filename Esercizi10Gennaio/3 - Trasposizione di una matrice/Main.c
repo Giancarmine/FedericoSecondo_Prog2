@@ -11,53 +11,69 @@ Data    		: 02/01/2015
 To Do:
 -----------------------------------------------------------------------------------------------------*/
 
-    void inversione (int Array[],int N);
+    void trasposizione (int Matrice[100][100], int Mc);
 
 main ()
 {
     //Dichiarazione
-    int 		*Array ;
+    int 		Matrice [100][100];
     int 		i,
-				N;
+                j,
+				Mr,  //righe
+				Mc;  //Colonne
 
-    //Inizializzazione del array da ordinare
-    printf ("Inserisci il numero di elementi del array: ");
-    scanf ("%d",&N);
+    //Inizializzazione righe e colonne della Matrice
+    printf  ("\nInserisci il numero di righe della Matrice: ");
+    scanf   ("%d",&Mr);
+    printf  ("\nInserisci il numero di colonne della Matrice: ");
+    scanf   ("%d",&Mc);
 
-
-    Array = (int *) malloc (N*sizeof(int ));
-
-    for (i=0; i<N; i++){
-        printf("\nInserisci il valore della cella[%d]: ", i);
-        scanf("%d",&Array[i]);
+    for (i=0; i<Mr; i++){
+        for (j=0; j<Mc; j++){
+            printf  ("\nInserisci il valore della cella[%d][%d]: ", i, j);
+            scanf   ("%d",&Matrice[i][j]);
+        }
     }
+
+    //Stampo la matrice del
+    printf("\n Matrice caricata:\n");
+    for (i=0; i<Mr; i++){
+        for (j=0; j<Mc; j++){
+            printf("\t%d", Matrice[i][j]);
+        }
+        printf("\n");
+    }
+    _getch();
 
     //Chiamata delle function
-    inversione ( Array, N);
+    trasposizione ( Matrice, Mc);
 
     //Stampo del risultato
-    printf("\n L`Array e` stato invertito:");
-    for (i=0; i<N; i++){
-        printf("\nArray[%d]:\t%d", i, Array[i]);
+    printf("\n Matrice risultante:\n");
+    for (i=0; i<Mr; i++){
+        for (j=0; j<Mc; j++){
+            printf("\t%d", Matrice[i][j]);
+        }
+        printf("\n");
     }
+    _getch();
 }
 
 
 /*==============================================================================
 Autore : Carmine Cuofano
 Data   : 02/01/2015
-							inversione
+							trasposizione
 ------------------------------------------------------------------------------*/
-void inversione (int Array[],int N)
-{
-    int i  ,     //Indice
-        j  ,	 //Cella speculare a quella puntata
-        App;     //Variabile di Appoggio
 
-    for(i=0, j=N-1; i < N/2 ; i++, j--)
-    {
-        App=Array[i];
-        Array[i]=Array[j];
-        Array[j]=App;
-    }
+void trasposizione (int Matrice[100][100], int Mc)
+{
+    int i , j , f , App;
+
+    for(i=0; i<Mc; i++)
+        for(j=0, f=Mc-1; j<f; j++, f--)
+        {   App            = Matrice [i][j];
+            Matrice [i][j] = Matrice [i][f];
+            Matrice [i][f] = App           ;
+        }
 }
