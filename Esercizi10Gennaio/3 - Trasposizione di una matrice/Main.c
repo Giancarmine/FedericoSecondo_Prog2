@@ -5,7 +5,7 @@
 
 
 Autore  	    : Carmine Cuofano											Matricola: N86001700
-Programma   	: Inversione di un array
+Programma   	: trasposizione di una matrice
 Data    		: 02/01/2015
 
 To Do:
