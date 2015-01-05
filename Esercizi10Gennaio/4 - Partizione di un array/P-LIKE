@@ -1,0 +1,22 @@
+/*===================================================================================================
+
+
+Autore  	    : Carmine Cuofano											Matricola: N86001700
+Programma   	: Inversione di un array
+Data    		: 02/01/2015
+
+-----------------------------------------------------------------------------------------------------*/
+
+
+function inversione(in: Array, N)
+	var Array :array [1....n] of integer
+	var N, i, j, App :integer
+	begin
+		for i:=1, j:=N to i < N/2 do
+			App:=Array(i)
+			Array(i):=Array(j)
+			Array(j):=App
+			j:=j-1
+		end for
+	end
+end inversione
