@@ -50,7 +50,7 @@ main ()
 
     //Stampo del risultato
     printf("\n Matrice risultante:\n");
-    for (i=0; i<Mr; i++){
+    for (i=0; i<Mr; i++){ 
         for (j=0; j<Mc; j++){
             printf("\t%d", Matrice[i][j]);
         }
