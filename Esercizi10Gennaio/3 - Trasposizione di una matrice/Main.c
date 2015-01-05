@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 /*===================================================================================================
 
@@ -6,6 +7,8 @@
 Autore  	    : Carmine Cuofano											Matricola: N86001700
 Programma   	: Inversione di un array
 Data    		: 02/01/2015
+
+To Do:
 -----------------------------------------------------------------------------------------------------*/
 
     void inversione (int Array[],int N);
