@@ -10,7 +10,7 @@ Data    		: 02/01/2015
 
 function insertionSort(in: Array, N)
 	var Array :array [1....n] of integer
-	var N :integer
+	var N, i, j, App :integer
 	begin
 		for i=1 to i < N do
 			App := Array(i)
