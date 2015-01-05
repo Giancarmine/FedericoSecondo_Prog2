@@ -17,7 +17,7 @@ main ()
     int 		i,
 				N;
 
-    //Inizializzazione del array da ordinare
+    //Inizializzazione del array da invertire
     printf ("Inserisci il numero di elementi del array: ");
     scanf ("%d",&N);
 
