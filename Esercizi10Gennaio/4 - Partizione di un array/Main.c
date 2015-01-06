@@ -8,7 +8,7 @@ Programma   	: Partizione di un array (4.5 di Dromey)
 Data    		: 04/01/2015
 -----------------------------------------------------------------------------------------------------*/
 
-    void Partizione (int Array[],int N, int x);
+    void Partiziona (int Array[],int N, int x);
 
 main ()
 {
@@ -35,7 +35,7 @@ main ()
     scanf	("%d",&x);
 
     //Chiamata delle function
-    Partizione ( Array, N, x);
+    Partiziona ( Array, N, x);
 
     //Stampo del risultato
     printf("\n L`Array e` stato partizionato:");
@@ -48,39 +48,36 @@ main ()
 /*==============================================================================
 Autore : Carmine Cuofano
 Data   : 02/01/2015
-							Partizione
+							Partiziona
 ------------------------------------------------------------------------------*/
-void Partizione (int Array[],int N, int x)
-{
-    int i=0  ,     //Indice
-        j=N-1  ,	 //Cella speculare a quella puntata
-        App;     //Variabile di Appoggio
+void Partiziona (int x[],int n,int x){
+    int i;
+    int j;
+    int t;
 
-    while (i<j&& Array[i]<=x)
+    i=0;
+    j=n-1;
+
+    while (i<j)
     {
-        i++;
-
+        if(x[i]>x && x[j]<x){
+            t=x[i];
+            x[i]=x[j];
+            x[j]=t;
+            i=i+1;
+            j=i-1;
+        }
+        if(x[i]<=x)
+        {
+            i=i+1;
+        }
+        if(x[j]>x)
+        {
+            j=j-1;
+        }
     }
-    for(i=0, j=N-1; i<j; )
 }
 
+/*
 https://robot.bolink.org/ebooks/How%20To%20Solve%20It%20By%20Computer%20By%20R%20G%20Dromey.pdf
-http://codereview.stackexchange.com/questions/17523/partitioning-array-elements-into-two-subsets
-http://www.laureateci.it/Public/data/contact/2007110195715_Fusione-PartizOrdinamentiavanzati.pdf.pdf
-
-begin
-i := 1; j := n;
-while (i < j) AND (a[i] <= x) do i := i + 1;
-while (i < j) AND (a[j] > x) do j := j – 1;
-if a[j] > x then j := j – 1;
-while i < j do
-begin
-t := a[i]; a[i] := a[j]; a[j] := t;
-i := i + 1; j := j –
-1;
-while (a[i] <= x) do i := i + 1;
-while (a[j] > x) do j := j –
-1;
-end;
-p := j;
-end;
+*/
