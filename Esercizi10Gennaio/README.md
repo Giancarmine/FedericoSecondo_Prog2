@@ -10,4 +10,5 @@
 	Facoltativo
 	5 - Ricerca del K-esimo elemento di un array (algoritmo 4.6 di Dromey)
 	
+Libro di Dromey
 https://robot.bolink.org/ebooks/How%20To%20Solve%20It%20By%20Computer%20By%20R%20G%20Dromey.pdf
