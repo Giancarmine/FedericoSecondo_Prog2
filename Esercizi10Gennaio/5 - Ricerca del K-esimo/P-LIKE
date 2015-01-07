@@ -8,18 +8,18 @@ Data    		: 02/01/2015
 -----------------------------------------------------------------------------------------------------*/
 
 
-function inversione(in: Array, N, x)
+function Partiziona(in: Array, N, x)
 	var Array :array [1....n] of integer
 	var N, i, j, t, x:integer
 	begin
-		for i:=1, j:=N to i < N/2 do
+		for i:=1 .AND. j:=N to N/2 do
 			App:=Array(i)
 			Array(i):=Array(j)
 			Array(j):=App
 			j:=j-1
 		end for
 	end
-end inversione
+end Partiziona
 
 void Partiziona (int x[],int n,int x){
     int i;
