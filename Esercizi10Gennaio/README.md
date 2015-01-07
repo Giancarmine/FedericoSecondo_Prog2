@@ -11,4 +11,6 @@
 	5 - Ricerca del K-esimo elemento di un array (algoritmo 4.6 di Dromey)
 	
 Libro di Dromey - How to solve it by computer 
-https://robot.bolink.org/ebooks/How%20To%20Solve%20It%20By%20Computer%20By%20R%20G%20Dromey.pdf
+	https://robot.bolink.org/ebooks/How%20To%20Solve%20It%20By%20Computer%20By%20R%20G%20Dromey.pdf
+Ita
+	https://drive.google.com/folderview?id=0B69zk-YCg8NDUXhHNFRjLWFmYms&usp=sharing
