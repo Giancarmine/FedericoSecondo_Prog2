@@ -53,19 +53,19 @@ Data   : 02/01/2015
 							Partiziona
 ------------------------------------------------------------------------------*/
 void Partiziona (int Array[],int N,int x){
-    int i;
-    int j;
-    int t;
+   int  i,
+        j,
+        App;
 
     i=0;
     j=N-1;
-
     while (i<j)
     {
-        if(Array[i]>x && Array[j]<x){
-            t=Array[i];
+        if(Array[i]>x && Array[j]<x)
+        {
+            App=Array[i];
             Array[i]=Array[j];
-            Array[j]=t;
+            Array[j]=App;
             i=i+1;
             j=i-1;
         }
