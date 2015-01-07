@@ -59,24 +59,22 @@ void Partiziona (int Array[],int N,int x){
 
     i=0;
     j=N-1;
-    while (i<j)
+
+    //Salto la parte già partizionata
+    while(Array[i]<=x)  i++;    //i minori del discriminante
+    while(Array[j]>x)   j--;    //e i maggiori
+
+    while (i<j) //Se non è già partizionato
     {
-        if(Array[i]>x && Array[j]<x)
-        {
-            App=Array[i];
-            Array[i]=Array[j];
-            Array[j]=App;
-            i=i+1;
-            j=i-1;
-        }
-        if(Array[i]<=x)
-        {
-            i=i+1;
-        }
-        if(Array[j]>x)
-        {
-            j=j-1;
-        }
+        //Scambia e avanza
+        App=Array[i];
+        Array[i]=Array[j];
+        Array[j]=App;
+
+
+        //Salto la parte già partizionata
+        while(Array[i]<=x)  i++;    //i minori del discriminante
+        while(Array[j]>x)   j--;    //e i maggiori
     }
 }
 
