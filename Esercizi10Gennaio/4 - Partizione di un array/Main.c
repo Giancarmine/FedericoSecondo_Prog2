@@ -50,28 +50,28 @@ Autore : Carmine Cuofano
 Data   : 02/01/2015
 							Partiziona
 ------------------------------------------------------------------------------*/
-void Partiziona (int x[],int n,int x){
+void Partiziona (int Array[],int N,int x){
     int i;
     int j;
     int t;
 
     i=0;
-    j=n-1;
+    j=N-1;
 
     while (i<j)
     {
-        if(x[i]>x && x[j]<x){
-            t=x[i];
-            x[i]=x[j];
-            x[j]=t;
+        if(Array[i]>x && Array[j]<x){
+            t=Array[i];
+            Array[i]=Array[j];
+            Array[j]=t;
             i=i+1;
             j=i-1;
         }
-        if(x[i]<=x)
+        if(Array[i]<=x)
         {
             i=i+1;
         }
-        if(x[j]>x)
+        if(Array[j]>x)
         {
             j=j-1;
         }
