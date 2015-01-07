@@ -13,7 +13,7 @@ function trasposizione(in: Array, Mc)
 	var Mc, i, j, f, App :integer
 	begin
 		for i:=1 to Mc do
-			for j:=1, f:=Mc-1 to f do
+			for j:=1 .AND. f:=Mc-1 to f do
 				App:=Array(i)(j)
 				Array(i)(j):=Array(i)(f)
 				Array(i)(f):=App
