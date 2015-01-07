@@ -12,7 +12,7 @@ function inversione(in: Array, N)
 	var Array :array [1....n] of integer
 	var N, i, j, App :integer
 	begin
-		for i:=1, j:=N to i < N/2 do
+		for i:=1 .AND. j:=N to N/2 do
 			App:=Array(i)
 			Array(i):=Array(j)
 			Array(j):=App
