@@ -16,7 +16,7 @@ main ()
     int 		*Array ;
     int 		i,
 				N,
-				x;
+				K;
 
     //Inizializzazione del array da invertire
     printf	("Inserisci il numero di elementi del array: ");
@@ -31,7 +31,7 @@ main ()
     }
 
     //Inizializzazione Discriminante X
-    printf	("Inserisci il numero del discriminante X: ");
+    printf	("Inserisci il valore da ricercare: ");
     scanf	("%d",&x);
 
     //Chiamata delle function
