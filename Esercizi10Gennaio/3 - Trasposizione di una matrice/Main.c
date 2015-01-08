@@ -11,24 +11,37 @@ Data    		: 02/01/2015
 To Do:
 -----------------------------------------------------------------------------------------------------*/
 
-    void trasposizione (int Matrice[100][100], int Mc);
+    void trasposizione (int **Matrice, int **Trasposta, int Mc);
 
 main ()
 {
     //Dichiarazione
-    int 		Matrice [100][100];
-    int 		i,
-                j,
-				Mr,  //righe
-				Mc;  //Colonne
+    int 	**Matrice,
+            **Trasposta;
+    int 	i,
+            j,
+            Mc;  //Colonne
 
     //Inizializzazione righe e colonne della Matrice
-    printf  ("\nInserisci il numero di righe della Matrice: ");
-    scanf   ("%d",&Mr);
-    printf  ("\nInserisci il numero di colonne della Matrice: ");
+    printf  ("\nInserisci il numero righe e colonne della Matrice (Quadrata): ");
     scanf   ("%d",&Mc);
 
-    for (i=0; i<Mr; i++){
+    //allocazione della matrice originale
+    Matrice = (int **)malloc(Mc * sizeof(int *));
+    for (i=0; i<Mc; i++)
+    {
+        Matrice[i] = (int *)malloc(Mc * sizeof(int));
+    }
+    //allocazione della matrice trasposta
+    Trasposta = (int **)malloc(Mc * sizeof(int *));
+    for (i=0; i<Mc; i++)
+    {
+        Trasposta[i] = (int *)malloc(Mc * sizeof(int));
+    }
+
+
+
+    for (i=0; i<Mc; i++){
         for (j=0; j<Mc; j++){
             printf  ("\nInserisci il valore della cella[%d][%d]: ", i, j);
             scanf   ("%d",&Matrice[i][j]);
@@ -37,26 +50,35 @@ main ()
 
     //Stampo la matrice del
     printf("\n Matrice caricata:\n");
-    for (i=0; i<Mr; i++){
+    for (i=0; i<Mc; i++){
         for (j=0; j<Mc; j++){
-            printf("\t%d", Matrice[i][j]);
+            printf("%4d", Matrice[i][j]);
         }
         printf("\n");
     }
     _getch();
 
     //Chiamata delle function
-    trasposizione ( Matrice, Mc);
+    trasposizione ( Matrice, Trasposta, Mc);
 
     //Stampo del risultato
     printf("\n Matrice risultante:\n");
-    for (i=0; i<Mr; i++){ 
+    for (i=0; i<Mc; i++){
         for (j=0; j<Mc; j++){
-            printf("\t%d", Matrice[i][j]);
+            printf("%4d", Trasposta[i][j]);
         }
         printf("\n");
     }
     _getch();
+    //Dealloco la matrice
+    for (i=0; i<Mc; i++)
+        free(Matrice[i]);
+    free(Matrice);
+
+    //Dealloco la trasposta
+    for (i=0; i<Mc; i++)
+        free(Trasposta[i]);
+    free(Trasposta);
 }
 
 
@@ -66,14 +88,16 @@ Data   : 02/01/2015
 							trasposizione
 ------------------------------------------------------------------------------*/
 
-void trasposizione (int Matrice[100][100], int Mc)
+void trasposizione (int **Matrice, int **Trasposta, int Mc)
 {
-    int i , j , f , App;
+    int i,
+        j;
 
     for(i=0; i<Mc; i++)
-        for(j=0, f=Mc-1; j<f; j++, f--)
-        {   App            = Matrice [i][j];
-            Matrice [i][j] = Matrice [i][f];
-            Matrice [i][f] = App           ;
+    {
+        for(j=0; j<Mc; j++)
+        {
+            Trasposta[j][i]=Matrice[i][j];
         }
+    }
 }
