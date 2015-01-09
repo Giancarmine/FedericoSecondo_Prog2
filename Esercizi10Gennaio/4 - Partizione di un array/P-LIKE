@@ -16,24 +16,24 @@ function Partiziona(in: Array, N, x)
 		j:=N
 		
 		//Scorro parte del Array se già partizionato
-		while (Array(i)<=x)
+		while (Array(i)<=x) do
 			i:=i+1;
 		end while
-		while (Array(j)>x)
+		while (Array(j)>x) do
 			i:=i+1;
 		end while
 		
 		//fino a che c'è qualcosa di non ancora partizionato inverti
-		while (i<j)
+		while (i<j) do
 			App:=Array(i)
 			Array(i):=Array(j)
 			Array(j):=App
 			
 			//Scorro parte del Array se già partizionato
-			while (Array(i)<=x)
+			while (Array(i)<=x) do
 				i:=i+1;
 			end while
-			while (Array(j)>x)
+			while (Array(j)>x) do
 				i:=i+1;
 			end while
 		end while

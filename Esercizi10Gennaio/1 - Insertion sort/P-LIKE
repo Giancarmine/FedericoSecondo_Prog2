@@ -15,7 +15,7 @@ function insertionSort(in: Array, N)
 		for i:=2 to N do
 			App := Array(i)
 			j := i-1
-			while (j>=0) .AND. (Array(j)>App)
+			while (j>=1) .AND. (Array(j)>App) do
 				Array(j+1) := Array(j)
 				j := j-1
 			end while
