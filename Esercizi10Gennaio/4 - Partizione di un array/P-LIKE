@@ -2,7 +2,7 @@
 
 
 Autore  	    : Carmine Cuofano											Matricola: N86001700
-Programma   	: Inversione di un array
+Programma   	: Partizione di un array (4.5 di Dromey)
 Data    		: 02/01/2015
 
 -----------------------------------------------------------------------------------------------------*/
@@ -10,41 +10,32 @@ Data    		: 02/01/2015
 
 function Partiziona(in: Array, N, x)
 	var Array :array [1....n] of integer
-	var N, i, j, t, x:integer
+	var N, i, j, App, x:integer
 	begin
-		for i:=1 .AND. j:=N to N/2 do
+		i:=i
+		j:=N
+		
+		//Scorro parte del Array se già partizionato
+		while (Array(i)<=x)
+			i:=i+1;
+		end while
+		while (Array(j)>x)
+			i:=i+1;
+		end while
+		
+		//fino a che c'è qualcosa di non ancora partizionato inverti
+		while (i<j)
 			App:=Array(i)
 			Array(i):=Array(j)
 			Array(j):=App
-			j:=j-1
-		end for
+			
+			//Scorro parte del Array se già partizionato
+			while (Array(i)<=x)
+				i:=i+1;
+			end while
+			while (Array(j)>x)
+				i:=i+1;
+			end while
+		end while
 	end
 end Partiziona
-
-void Partiziona (int x[],int n,int x){
-    int i;
-    int j;
-    int t;
-
-    i=0;
-    j=n-1;
-
-    while (i<j)
-    {
-        if(x[i]>x && x[j]<x){
-            t=x[i];
-            x[i]=x[j];
-            x[j]=t;
-            i=i+1;
-            j=i-1;
-        }
-        if(x[i]<=x)
-        {
-            i=i+1;
-        }
-        if(x[j]>x)
-        {
-            j=j-1;
-        }
-    }
-}
