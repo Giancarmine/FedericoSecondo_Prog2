@@ -8,15 +8,15 @@ Data    		: 03/01/2015
 -----------------------------------------------------------------------------------------------------*/
 
 
-function trasposizione(in: Array, Mc)
-	var Matrice :array [1....Mc,1....Mr] of integer
-	var Mc, i, j, f, App :integer
+function trasposizione(in: Matrice, Trasposta, Mc)
+	var Matrice   :array [1....Mc,1....Mc] of integer
+	var Trasposta :array [1....Mc,1....Mc] of integer
+	var Mc, i, j, App :integer
+
 	begin
 		for i:=1 to Mc do
-			for j:=1 .AND. f:=Mc-1 to f do
-				App:=Array(i)(j)
-				Array(i)(j):=Array(i)(f)
-				Array(i)(f):=App
+			for j:=1 to Mc do
+				Trasposta(j)(i):=Matrice(i)(j)
 			end for
 		end for
 	end

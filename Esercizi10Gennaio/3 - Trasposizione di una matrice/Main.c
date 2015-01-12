@@ -40,7 +40,7 @@ main ()
     }
 
 
-
+    //Riempi Matrice
     for (i=0; i<Mc; i++){
         for (j=0; j<Mc; j++){
             printf  ("\nInserisci il valore della cella[%d][%d]: ", i, j);
