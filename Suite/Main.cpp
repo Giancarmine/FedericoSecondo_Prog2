@@ -1,5 +1,5 @@
 #include <iostream>
-#include <fstream>
+#include <conio.h>
 #include "Suite.h"
 
 using namespace std;
@@ -17,4 +17,7 @@ To Do:
 main(){
     int *Array;
     int **Matrix;
+    int N;
+
+    cout << "Inserisci la lunghezza dell'Array: ";
 }

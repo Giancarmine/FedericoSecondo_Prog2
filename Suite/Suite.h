@@ -4,4 +4,6 @@
 //Define
 
 //Prototipi
-void swap (int &a, int &b);
+void Swap (int &a, int &b);
+void Alloc_Vett_int (int *a, int N);
+void Dealloc_Vett_int (int *a);

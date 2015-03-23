@@ -5,12 +5,18 @@ Autore  	    : Carmine Cuofano											Matricola: N86001700
 Programma   	: [C++] Alloca Vettore
 Data    		: 23/03/2015
 -----------------------------------------------------------------------------------------------------*/
-void swap (int &a, int &b){
-    int App;
+void Alloc_Vett_int (int *a, int N){
+   a = new int[N];
+}
+/*===================================================================================================
+Dealloca Array
 
-    App = a;
-    a = b;
-    b = App;
+Autore  	    : Carmine Cuofano											Matricola: N86001700
+Programma   	: [C++] Dealloca Vettore
+Data    		: 23/03/2015
+-----------------------------------------------------------------------------------------------------*/
+void Dealloc_Vett_int (int *a){
+    if (a) delete []a;
 }
 /*===================================================================================================
 Dati 2 parametri li inverte
@@ -19,7 +25,7 @@ Autore  	    : Carmine Cuofano											Matricola: N86001700
 Programma   	: [C++] Swap
 Data    		: 23/03/2015
 -----------------------------------------------------------------------------------------------------*/
-void swap (int &a, int &b){
+void Swap (int &a, int &b){
     int App;
 
     App = a;
@@ -35,6 +41,7 @@ Programma   	: [C++] Prodotto Scalare
 Data    		: 23/03/2015
 -----------------------------------------------------------------------------------------------------*/
 int Prodotto_Scalare (int A[], int B[], int N){
+    int Product_Scal;
 
-    return Product;
+    return Product_Scal;
 }
