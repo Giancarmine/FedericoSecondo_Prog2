@@ -1,0 +1,9 @@
+sviluppare una suite per la manipolazione di matrici e vettori
+in particolare svilupp. un prog chimante che richiami funz.:
+
+-prod. scal.
+- prod matrice x vett
+- prod. mat x mat
+- trasposta
+
+con doc. estrerna e interna
