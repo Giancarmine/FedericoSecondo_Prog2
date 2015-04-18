@@ -5,5 +5,5 @@
 
 //Prototipi
 void Swap (int &a, int &b);
-void Alloc_Vett_int (int *a, int N);
-void Dealloc_Vett_int (int *a);
+int Prodotto_Scalare (int A[], int B[], int N);
+void Prodotto_Matrice_Array (int **M, int A[], int B[], int X, int Y, int N);
