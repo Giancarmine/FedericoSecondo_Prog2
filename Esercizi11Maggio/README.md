@@ -3,9 +3,8 @@
 	Completi di Implementazione C/C++, funzione in P-LIKE e documentazione
 	
 	1 - ADT COMPLEX - SUM - SOT - MUL - DIV
-	2 - 
-	3 - 
-	4 - 
+	2 - Quick Sort - Ricorsivo & Iterativo
+	3 - Inserimento ordinato in una linked list - Ricorsivo & Iterativo
 	
 Libro di Dromey - How to solve it by computer 
 	https://robot.bolink.org/ebooks/How%20To%20Solve%20It%20By%20Computer%20By%20R%20G%20Dromey.pdf
