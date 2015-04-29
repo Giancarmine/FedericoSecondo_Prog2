@@ -16,8 +16,7 @@ int main()
     int Tasto;
     Nodo *Head;
 
-    Head = new Nodo;
-    Head->link = NULL;
+    Head = NULL;
 
     do
     {
@@ -29,7 +28,7 @@ int main()
 
         //Stampo il menu`
         cout<<"\t1 - Stampa\n";
-        cout<<"\t2 - Inserisci\n";
+        cout<<"\t2 - Inserisci in coda\n";
         cout<<"\t3 - Elimina\n";
         cout<<"\t4 - \n";
         cout<<"\nESC to exit";
@@ -50,6 +49,8 @@ int main()
                 break;
             case '2' :
                 system(CLEAR);
+                Aggiungi_Lista(Head);
+                cout << Head->info;
                 _getch();
                 break;
             case 3 :
