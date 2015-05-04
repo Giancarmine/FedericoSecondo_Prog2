@@ -49,9 +49,7 @@ int main()
                 break;
             case '2' :
                 system(CLEAR);
-                Aggiungi_Lista(Head);
-                cout << Head->info;
-                _getch();
+                Head = Aggiungi_Lista(Head);
                 break;
             case 3 :
                 system(CLEAR);

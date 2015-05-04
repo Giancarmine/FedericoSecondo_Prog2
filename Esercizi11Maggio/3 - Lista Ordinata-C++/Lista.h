@@ -5,4 +5,4 @@ typedef struct nodo{
 } Nodo;
 
 void Stampa_Lista(Nodo* Head);
-void Aggiungi_Lista(Nodo* Head);
+Nodo* Aggiungi_Lista(Nodo* Head);

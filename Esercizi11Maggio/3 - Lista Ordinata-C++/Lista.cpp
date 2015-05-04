@@ -10,7 +10,7 @@ void Stampa_Lista(Nodo* Head){
 
     cout<< Head->info <<"\t";
 
-    if(Head->link){
+    if(Head->link!=NULL){
         Stampa_Lista(Head->link);
     }
 }
@@ -23,7 +23,7 @@ Data    		: 29/04/2015
 
 -----------------------------------------------------------------------------------------------------*/
 
-void Aggiungi_Lista(Nodo* Head){
+Nodo* Aggiungi_Lista(Nodo* Head){
 
     Nodo *NewNodo;
 
@@ -36,7 +36,7 @@ void Aggiungi_Lista(Nodo* Head){
             cin>>NewNodo->info;
         }
         else{
-            Aggiungi_Lista(Head->link);
+            Head->link = Aggiungi_Lista(Head->link);
         }
     }
     else{
@@ -45,6 +45,38 @@ void Aggiungi_Lista(Nodo* Head){
         cout<<"La Lista e` vuota\n";
         cout << "Inserisci il campo info: ";
         cin >> Head->info;
-        cout << Head->info;
     }
+    return Head;
+}
+
+/*===================================================================================================
+
+Autore  	    : Carmine Cuofano											Matricola: N86001700
+Programma   	: Elimina Ultimo Nodo
+Data    		: 27/04/2015
+
+-----------------------------------------------------------------------------------------------------*/
+
+Nodo* Elimina_Lista(Nodo* Head, int ){
+
+    cout<< Head->info <<"\t";
+
+    if(Head->link!=NULL){
+        Stampa_Lista(Head->link);
+    }
+}
+
+NODO *Elimina (NODO *H , int Key)
+{
+    NODO *App;
+
+    for(App=H ; H ; H = H->Next)
+    {   if(H->X == Key)
+        {   App->Next = H->Next ;
+            free(H);
+        }
+        App = H ;
+    }
+
+    return H ;
 }
