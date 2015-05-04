@@ -39,7 +39,7 @@ int main()
         Tasto=_getch();
         switch(Tasto)
         {
-            case '1' :
+            case '1' ://Stampa
                 system(CLEAR);
                 if (Head != NULL){
                     cout << "Gli Elementi presenti in lista sono:\n";
@@ -50,13 +50,15 @@ int main()
                 }
                 _getch();
                 break;
-            case '2' :
+            case '2' ://Inserisci in coda
                 system(CLEAR);
                 Head = Aggiungi_Lista(Head);
                 break;
-            case '3' :
+            case '3' ://Elimina un elemento definito dal utente
                 system(CLEAR);
+                //Se la lista esiste
                 if (Head != NULL){
+                    //Definisci l'elemento da eliminare
                     cout << "Inserisci il valore da eliminare: ";
                     cin >> Key;
                     Head = Elimina_Lista(Head, Key, Trovato);
@@ -69,7 +71,7 @@ int main()
                 }
                 _getch();
                 break;
-            case '4' :
+            case '4' ://Inserimento ordinato
                 system(CLEAR);
                 _getch();
                 break;
