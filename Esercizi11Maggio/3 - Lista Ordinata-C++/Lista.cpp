@@ -57,26 +57,19 @@ Data    		: 27/04/2015
 
 -----------------------------------------------------------------------------------------------------*/
 
-Nodo* Elimina_Lista(Nodo* Head, int ){
+Nodo* Elimina_Lista(Nodo* Head, int Key, int &Trovato){
 
-    cout<< Head->info <<"\t";
+    Nodo* App;
 
-    if(Head->link!=NULL){
-        Stampa_Lista(Head->link);
-    }
-}
-
-NODO *Elimina (NODO *H , int Key)
-{
-    NODO *App;
-
-    for(App=H ; H ; H = H->Next)
-    {   if(H->X == Key)
-        {   App->Next = H->Next ;
-            free(H);
+    for(App = Head; Head; Head = Head->link){
+        if(Head->info == Key){
+            App->link = Head->link ;
+            delete Head;
+            cout << "Elemento ELIMINATO!";
+            Trovato = 1;
         }
-        App = H ;
+        App = Head ;
     }
 
-    return H ;
+    return Head ;
 }

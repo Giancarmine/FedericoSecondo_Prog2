@@ -6,14 +6,16 @@ using namespace std;
 /*===================================================================================================
 
 Autore  	    : Carmine Cuofano											Matricola: N86001700
-Programma   	: inserisci in Lista Ordinata
+Programma   	: Lista
 Data    		: 27/04/2015
 
 -----------------------------------------------------------------------------------------------------*/
 
 int main()
 {
-    int Tasto;
+    int Tasto,
+        Key,
+        Trovato = 0;
     Nodo *Head;
 
     Head = NULL;
@@ -29,8 +31,8 @@ int main()
         //Stampo il menu`
         cout<<"\t1 - Stampa\n";
         cout<<"\t2 - Inserisci in coda\n";
-        cout<<"\t3 - Elimina\n";
-        cout<<"\t4 - \n";
+        cout<<"\t3 - Elimina elemento\n";
+        cout<<"\t4 - Inserisci \n";
         cout<<"\nESC to exit";
 
         //Menu`
@@ -40,10 +42,11 @@ int main()
             case '1' :
                 system(CLEAR);
                 if (Head != NULL){
+                    cout << "Gli Elementi presenti in lista sono:\n";
                     Stampa_Lista(Head);
                 }
                 else{
-                    cout<<"La Lista e` vuota";
+                    cout << "La Lista e` vuota";
                 }
                 _getch();
                 break;
@@ -51,11 +54,22 @@ int main()
                 system(CLEAR);
                 Head = Aggiungi_Lista(Head);
                 break;
-            case 3 :
+            case '3' :
                 system(CLEAR);
+                if (Head != NULL){
+                    cout << "Inserisci il valore da eliminare: ";
+                    cin >> Key;
+                    Head = Elimina_Lista(Head, Key, Trovato);
+                    if (Trovato == 0){
+                        cout << "Elemento NON TROVATO!";
+                    }
+                }
+                else{
+                    cout << "La Lista e` vuota";
+                }
                 _getch();
                 break;
-            case 4 :
+            case '4' :
                 system(CLEAR);
                 _getch();
                 break;
