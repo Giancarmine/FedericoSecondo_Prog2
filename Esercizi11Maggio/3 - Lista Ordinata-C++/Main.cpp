@@ -73,6 +73,19 @@ int main()
                 break;
             case '4' ://Inserimento ordinato
                 system(CLEAR);
+                //Se la lista esiste
+                if (Head != NULL){
+                    //Definisci l'elemento a cui accodare l'elemento
+                    cout << "Inserisci la posizionea cui aggiungerlo: ";
+                    cin >> Key;
+                    Head = Elimina_Lista(Head, Key, Trovato);
+                    if (Trovato == 0){
+                        cout << "Elemento NON TROVATO!";
+                    }
+                }
+                else{
+                    cout << "La Lista e` vuota - Inserisci in coda!";
+                }
                 _getch();
                 break;
         }

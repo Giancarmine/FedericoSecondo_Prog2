@@ -49,6 +49,31 @@ Nodo* Aggiungi_Lista(Nodo* Head){
     return Head;
 }
 
+
+/*===================================================================================================
+
+Autore  	    : Carmine Cuofano											Matricola: N86001700
+Programma   	: Elimina Nodo Key
+Data    		: 27/04/2015
+
+-----------------------------------------------------------------------------------------------------*/
+
+Nodo* Aggiungi_Lista_Ordine(Nodo* Head, int Key, int &Trovato){
+
+    Nodo* App;
+
+    for(App = Head; Head; Head = Head->link){
+        if(Head->info == Key){
+            App->link = Head->link ;
+            delete Head;
+            cout << "Elemento ELIMINATO!";
+            Trovato = 1;
+        }
+        App = Head ;
+    }
+
+    return Head ;
+}
 /*===================================================================================================
 
 Autore  	    : Carmine Cuofano											Matricola: N86001700
