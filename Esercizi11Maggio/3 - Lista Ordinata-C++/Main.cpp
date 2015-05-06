@@ -76,7 +76,7 @@ int main()
                 //Se la lista esiste
                 if (Head != NULL){
                     //Definisci l'elemento a cui accodare l'elemento
-                    cout << "Inserisci la posizionea cui aggiungerlo: ";
+                    cout << "Inserisci il valore del elemento a cui accodarsi: ";
                     cin >> Key;
                     Head = Elimina_Lista(Head, Key, Trovato);
                     if (Trovato == 0){
