@@ -77,12 +77,12 @@ Nodo* Aggiungi_Lista_Ordine(Nodo* Head, int Key, int &Trovato){
 /*===================================================================================================
 
 Autore  	    : Carmine Cuofano											Matricola: N86001700
-Programma   	: Elimina Ultimo Nodo
+Programma   	: Aggiungi Lista key
 Data    		: 27/04/2015
 
 -----------------------------------------------------------------------------------------------------*/
 
-Nodo* Elimina_Lista(Nodo* Head, int Key, int &Trovato){
+Nodo* Add_Key_Lista(Nodo* Head, int Key, int &Trovato){
 
     Nodo* App;
 

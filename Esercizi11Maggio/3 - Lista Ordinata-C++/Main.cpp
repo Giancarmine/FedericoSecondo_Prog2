@@ -29,11 +29,11 @@ int main()
         cout << "Inserimento Ordinato in lista\n\n";
 
         //Stampo il menu`
-        cout<<"\t1 - Stampa\n";
-        cout<<"\t2 - Inserisci in coda\n";
-        cout<<"\t3 - Elimina elemento\n";
-        cout<<"\t4 - Inserisci \n";
-        cout<<"\nESC to exit";
+        cout << "\t1 - Stampa\n";
+        cout << "\t2 - Inserisci in coda\n";
+        cout << "\t3 - Elimina elemento\n";
+        cout << "\t4 - Inserisci \n";
+        cout << "\nESC to exit";
 
         //Menu`
         Tasto=_getch();
