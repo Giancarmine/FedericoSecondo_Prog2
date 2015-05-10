@@ -58,7 +58,7 @@ Data    		: 27/04/2015
 
 -----------------------------------------------------------------------------------------------------*/
 
-Nodo* Aggiungi_Lista_Ordine(Nodo* Head, int Key, int &Trovato){
+Nodo* Elimina_Lista(Nodo* Head, int Key, int &Trovato){
 
     Nodo* App;
 
@@ -84,16 +84,18 @@ Data    		: 27/04/2015
 
 Nodo* Add_Key_Lista(Nodo* Head, int Key, int &Trovato){
 
-    Nodo* App;
+    Nodo* NewNodo;
 
-    for(App = Head; Head; Head = Head->link){
+    for(NewNodo = Head; Head; Head = Head->link){
         if(Head->info == Key){
-            App->link = Head->link ;
-            delete Head;
-            cout << "Elemento ELIMINATO!";
+            NewNodo = new Nodo;
+            NewNodo->link = Head->link;
+            Head->link = NewNodo;
+            cout<<"Inserisci il campo info: ";
+            cin>>NewNodo->info;
+            cout << "Elemento AGGIUNTO!";
             Trovato = 1;
         }
-        App = Head ;
     }
 
     return Head ;

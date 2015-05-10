@@ -32,11 +32,12 @@ int main()
         cout << "\t1 - Stampa\n";
         cout << "\t2 - Inserisci in coda\n";
         cout << "\t3 - Elimina elemento\n";
-        cout << "\t4 - Inserisci \n";
+        cout << "\t4 - Inserisci dopo elemento\n";
         cout << "\nESC to exit";
 
         //Menu`
-        Tasto=_getch();
+        Trovato = 0;
+        Tasto = _getch();
         switch(Tasto)
         {
             case '1' ://Stampa
@@ -78,7 +79,7 @@ int main()
                     //Definisci l'elemento a cui accodare l'elemento
                     cout << "Inserisci il valore del elemento a cui accodarsi: ";
                     cin >> Key;
-                    Head = Elimina_Lista(Head, Key, Trovato);
+                    Head = Add_Key_Lista(Head, Key, Trovato);
                     if (Trovato == 0){
                         cout << "Elemento NON TROVATO!";
                     }
