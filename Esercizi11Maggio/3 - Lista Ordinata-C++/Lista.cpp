@@ -86,17 +86,22 @@ Nodo* Add_Key_Lista(Nodo* Head, int Key, int &Trovato){
 
     Nodo* NewNodo;
 
-    for(NewNodo = Head; Head; Head = Head->link){
-        if(Head->info == Key){
-            NewNodo = new Nodo;
-            NewNodo->link = Head->link;
-            Head->link = NewNodo;
-            cout<<"Inserisci il campo info: ";
-            cin>>NewNodo->info;
-            cout << "Elemento AGGIUNTO!";
-            Trovato = 1;
-        }
+    NewNodo = NULL;
+
+    if(Head->info == Key){
+        NewNodo = new Nodo;
+        NewNodo->link = Head->link;
+        Head->link = NewNodo;
+        cout<<"Inserisci il campo info: ";
+        cin>>NewNodo->info;
+        cout << "Elemento AGGIUNTO!";
+        Trovato = 1;
+    }
+    if(Head->link != NULL || Trovato == 0){
+        Add_Key_Lista(Head->link, Key, Trovato);
     }
 
     return Head ;
 }
+
+
