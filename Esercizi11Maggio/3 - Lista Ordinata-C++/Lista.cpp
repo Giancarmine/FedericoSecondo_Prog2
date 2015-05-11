@@ -61,18 +61,23 @@ Data    		: 27/04/2015
 Nodo* Elimina_Lista(Nodo* Head, int Key, int &Trovato){
 
     Nodo* App;
+    App = NULL;
+    App = new Nodo;
 
-    for(App = Head; Head; Head = Head->link){
-        if(Head->info == Key){
-            App->link = Head->link ;
-            delete Head;
-            cout << "Elemento ELIMINATO!";
-            Trovato = 1;
-        }
-        App = Head ;
+    if(Head->info == Key){
+        App->link = Head->link ;
+        delete Head;
+        cout << "Elemento ELIMINATO!";
+        Trovato = 1;
+		return App;
     }
 
-    return Head ;
+    if(Head->link != NULL || Trovato == 0){
+        Head = Elimina_Lista(Head->link, Key, Trovato);
+		return Head;		
+    }
+
+    return Head;
 }
 /*===================================================================================================
 
@@ -98,7 +103,7 @@ Nodo* Add_Key_Lista(Nodo* Head, int Key, int &Trovato){
         Trovato = 1;
     }
     if(Head->link != NULL || Trovato == 0){
-        Add_Key_Lista(Head->link, Key, Trovato);
+        Head = Add_Key_Lista(Head->link, Key, Trovato);
     }
 
     return Head ;
