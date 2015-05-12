@@ -37,7 +37,6 @@ main()
         cout << "\nESC to exit";
 
         //Menu`
-        Trovato = 0;
         Tasto = _getch();
         switch(Tasto)
         {
@@ -63,6 +62,7 @@ main()
                     //Definisci l'elemento da eliminare
                     cout << "Inserisci il valore da eliminare: ";
                     cin >> Key;
+                    Trovato = 0;
                     Head = Elimina_Lista(Head, Key, Trovato);
                     if (Trovato == 0){
                         cout << "Elemento NON TROVATO!";

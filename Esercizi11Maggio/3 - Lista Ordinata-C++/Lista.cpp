@@ -65,7 +65,7 @@ Nodo* Elimina_Lista(Nodo* Head, int Key, int &Trovato){
     App = new Nodo;
 
     if(Head->info == Key){
-        App->link = Head->link ;
+        App = Head->link ;
         delete Head;
         cout << "Elemento ELIMINATO!";
         Trovato = 1;
@@ -73,11 +73,9 @@ Nodo* Elimina_Lista(Nodo* Head, int Key, int &Trovato){
     }
 
     if(Head->link != NULL || Trovato == 0){
-        Head = Elimina_Lista(Head->link, Key, Trovato);
-		return Head;		
+        Head->link = Elimina_Lista(Head->link, Key, Trovato);
+		return Head;
     }
-
-    return Head;
 }
 /*===================================================================================================
 
@@ -94,16 +92,20 @@ Nodo* Add_Key_Lista(Nodo* Head, int Key, int &Trovato){
     NewNodo = NULL;
 
     if(Head->info == Key){
+        Trovato = 1;
         NewNodo = new Nodo;
         NewNodo->link = Head->link;
         Head->link = NewNodo;
         cout<<"Inserisci il campo info: ";
         cin>>NewNodo->info;
         cout << "Elemento AGGIUNTO!";
-        Trovato = 1;
     }
-    if(Head->link != NULL || Trovato == 0){
-        Head = Add_Key_Lista(Head->link, Key, Trovato);
+    else{
+        Trovato = 0;
+    }
+
+    if(Head->link != NULL || Trovato != 0){
+        Head->link = Add_Key_Lista(Head->link, Key, Trovato);
     }
 
     return Head ;
