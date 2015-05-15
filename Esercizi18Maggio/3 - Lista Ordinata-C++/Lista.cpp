@@ -110,5 +110,38 @@ Nodo* Add_Key_Lista(Nodo* Head, int Key, int &Trovato){
 
     return Head ;
 }
+/*===================================================================================================
 
+Autore  	    : Carmine Cuofano											Matricola: N86001700
+Programma   	: Aggiungi elemento in ordine
+Data    		: 27/04/2015
 
+-----------------------------------------------------------------------------------------------------*/
+
+Nodo* Aggiungi_Lista_Ordinata_Ricorsivo(Nodo* Head, int Key){
+
+    Nodo* NewNodo;
+
+    NewNodo = NULL;
+
+    if (Head != NULL){
+        if(Head->info > Key){
+            NewNodo = new Nodo;
+            NewNodo->info = Key;
+            NewNodo->link = Head->link;
+            Head->link = NewNodo;
+            cout << "Elemento AGGIUNTO!";
+        }
+        else{
+            Head->link = Aggiungi_Lista_Ordinata_Ricorsivo (Head->link, Key);
+        }
+    }
+    else{
+        Head = new Nodo;
+        Head->link = NULL;
+        Head->info = Key;
+        cout << "Elemento AGGIUNTO!";
+    }
+
+    return Head ;
+}
