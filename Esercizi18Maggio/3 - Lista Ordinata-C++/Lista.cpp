@@ -18,7 +18,7 @@ void Stampa_Lista(Nodo* Head){
 /*===================================================================================================
 
 Autore  	    : Carmine Cuofano											Matricola: N86001700
-Programma   	: Aggiungi Lista
+Programma   	: Aggiungi in coda alla lista
 Data    		: 29/04/2015
 
 -----------------------------------------------------------------------------------------------------*/
@@ -121,27 +121,40 @@ Data    		: 27/04/2015
 Nodo* Aggiungi_Lista_Ordinata_Ricorsivo(Nodo* Head, int Key){
 
     Nodo* NewNodo;
+    Nodo* Successivo;
 
     NewNodo = NULL;
+    Successivo = NULL;
+    Successivo = new Nodo;
+
 
     if (Head != NULL){
-        if(Head->info > Key){
-            NewNodo = new Nodo;
-            NewNodo->info = Key;
-            NewNodo->link = Head->link;
-            Head->link = NewNodo;
-            cout << "Elemento AGGIUNTO!";
+        if (Head->info >= Key){
+            Successivo = Head->link;
+            if ( Successivo == NULL || Successivo->info < Key){
+                NewNodo = new Nodo;
+                NewNodo->info = Key;
+                NewNodo->link = Head->link;
+                Head->link = NewNodo;
+                cout << "Elemento AGGIUNTO!";
+            }
+            else {
+                if (Head->link != NULL){
+                    Head = Aggiungi_Lista_Ordinata_Ricorsivo(Head->link, Key);
+                }
+            }
         }
         else{
-            Head->link = Aggiungi_Lista_Ordinata_Ricorsivo (Head->link, Key);
+            if (Head->link != NULL){
+                Head = Aggiungi_Lista_Ordinata_Ricorsivo(Head->link, Key);
+            }
         }
     }
-    else{
+    else {
         Head = new Nodo;
         Head->link = NULL;
         Head->info = Key;
         cout << "Elemento AGGIUNTO!";
     }
-
     return Head ;
 }
