@@ -113,7 +113,7 @@ Nodo* Add_Key_Lista(Nodo* Head, int Key, int &Trovato){
 /*===================================================================================================
 
 Autore  	    : Carmine Cuofano											Matricola: N86001700
-Programma   	: Aggiungi elemento in ordine
+Programma   	: Aggiungi elemento in ordine Ricorsivo
 Data    		: 27/04/2015
 
 -----------------------------------------------------------------------------------------------------*/
@@ -157,4 +157,57 @@ Nodo* Aggiungi_Lista_Ordinata_Ricorsivo(Nodo* Head, int Key){
         cout << "Elemento AGGIUNTO!";
     }
     return Head ;
+}
+
+/*===================================================================================================
+
+Autore  	    : Carmine Cuofano											Matricola: N86001700
+Programma   	: Aggiungi elemento in ordine Iterativo
+Data    		: 17/05/2015
+
+-----------------------------------------------------------------------------------------------------*/
+
+Nodo* Aggiungi_Lista_Ordinata_Iterativo(Nodo* H, int Key){
+
+    Nodo* Head;
+    Nodo* NewNodo;
+    Nodo* Successivo;
+    int I = 0;
+
+
+    NewNodo = Successivo = NULL;
+    Successivo = new Nodo;
+
+    Head = H;
+
+    do {
+        if (Head != NULL){
+            if (Head->info >= Key){
+                Successivo = Head->link;
+                if ( Successivo == NULL || Successivo->info < Key){
+                    NewNodo = new Nodo;
+                    NewNodo->info = Key;
+                    NewNodo->link = Head->link;
+                    Head->link = NewNodo;
+                    cout << "Elemento AGGIUNTO!";
+                    // Se devo attaccarlo al primo, dunque viene modificata l'orgine
+                    if (I == 1){
+                        H = Head;
+                    }
+                    return H;
+                }
+            }
+        }
+        else {
+            Head = new Nodo;
+            Head->link = NULL;
+            Head->info = Key;
+            cout << "Elemento AGGIUNTO!";
+            H = Head;
+            return H;
+        }
+        Head = Head->link;
+        I++;
+    }
+    while (Head);
 }

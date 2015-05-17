@@ -56,7 +56,7 @@ main()
                 //Definisci l'elemento a cui accodare l'elemento
                 cout << "Inserisci il valore del elemento da aggiungere: ";
                 cin >> Key;
-                Head = Aggiungi_Lista_Ordinata_Ricorsivo(Head, Key);
+                Head = Aggiungi_Lista_Ordinata_Iterativo(Head, Key);
                 _getch();
                 break;
             case '3' ://Elimina un elemento definito dal utente
