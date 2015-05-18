@@ -1,74 +1,93 @@
-type Complex : record
-	Re : real
-	Im : real
+type Nodo : record
+	Info : int
+	Link : Nodo
 end
 
 /*===================================================================================================
 
 Autore  	    : Carmine Cuofano											Matricola: N86001700
-Programma   	: Somma Complex
-Data    		: 19/04/2015
+Programma   	: Aggiungi elemento in ordine Ricorsivo
+Data    		: 27/04/2015
 
 -----------------------------------------------------------------------------------------------------*/
 
-function SommaComplex(in: X, Y, Z)
-	var X, Y, Z :Complex
-	begin
-		Z.Re := X.Re+Y.Re;
-		Z.Im := X.Im+Y.Im;
-	end
-end SommaComplex
+procedure Aggiungi_Lista_Ordinata_Ricorsivo (in: Head, Key out: Head)
+	VAR NewNodo, Successivo, Head :Nodo
+	VAR Key :Integer
+begin
+	NewNodo := NULL
+    Successivo := NULL
+    Successivo := new Nodo
 
-
+	if Head != NULL then
+		if Head.info >= Key then
+			Successivo := Head.link
+			if Successivo = NULL .OR. Successivo.info < Key then
+                NewNodo.info := Key
+                NewNodo.link := Head.link
+                Head.link := NewNodo
+                print "Elemento AGGIUNTO!"
+			else
+				if Head.link != NULL then
+					Aggiungi_Lista_Ordinata_Ricorsivo(Head.link, Key)
+				endif
+			endif
+		else
+			if Head.link != NULL then
+				Aggiungi_Lista_Ordinata_Ricorsivo(Head.link, Key)
+			endif
+		endif
+	else
+		Head.link := NULL
+        Head.info := Key
+        print "Elemento AGGIUNTO!"
+	endif
+	
+end Aggiungi_Lista_Ordinata_Ricorsivo
+    
+	
 /*===================================================================================================
 
 Autore  	    : Carmine Cuofano											Matricola: N86001700
-Programma   	: Sottrazione Complex
-Data    		: 19/04/2015
+Programma   	: Aggiungi elemento in ordine Iterativo
+Data    		: 17/05/2015
 
 -----------------------------------------------------------------------------------------------------*/
 
+Nodo* Aggiungi_Lista_Ordinata_Iterativo(Nodo* H, int Key){
+procedure Aggiungi_Lista_Ordinata_Ricorsivo (in: Head, Key out: Head)
+	VAR NewNodo, Successivo, Head :Nodo
+	VAR Key, I :Integer
+begin
+	I := 0
 
-function SottrazioneComplex(in: X, Y, Z)
-	var X, Y, Z :Complex
-	begin
-		Z.Re := X.Re-Y.Re;
-		Z.Im := X.Im-Y.Im;
-	end
-end SottrazioneComplex
+    NewNodo := Successivo := NULL;
 
-/*===================================================================================================
-
-
-Autore  	    : Carmine Cuofano											Matricola: N86001700
-Programma   	: Moltiplicazione Complex
-Data    		: 19/04/2015
-
------------------------------------------------------------------------------------------------------*/
-
-
-function MoltiplicazioneComplex(in: X, Y, Z)
-	var X, Y, Z :Complex
-	begin
-		Z.Re := X.Re*Y.Re;
-		Z.Im := X.Im*Y.Im;
-	end
-end MoltiplicazioneComplex
-
-/*===================================================================================================
-
-
-Autore  	    : Carmine Cuofano											Matricola: N86001700
-Programma   	: Divisione Complex
-Data    		: 19/04/2015
-
------------------------------------------------------------------------------------------------------*/
-
-
-function DivisioneComplex(in: X, Y, Z)
-	var X, Y, Z :Complex
-	begin
-		Z.Re := X.Re/Y.Re;
-		Z.Im := X.Im/Y.Im;
-	end
-end DivisioneComplex
+    Head := H;
+	
+	do
+		if Head != NULL then
+			if Head.info >= Key then
+				Successivo = Head.link;
+				if Successivo = NULL .OR. Successivo->info < Key then
+					NewNodo.info := Key
+					NewNodo.link := Head.link
+					Head.link := NewNodo
+					print "Elemento AGGIUNTO!"
+					if I = 1 then
+						H := Head
+					endif
+				endif
+			endif
+		else 
+			Head.link := NULL
+			Head.info := Key
+			print "Elemento AGGIUNTO!"
+			H := Head
+		endif
+			
+		Head := Head.link
+		I := I+1
+	while Head != NULL
+	
+}
