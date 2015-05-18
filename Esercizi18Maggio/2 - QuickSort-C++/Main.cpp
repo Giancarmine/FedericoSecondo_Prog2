@@ -13,7 +13,6 @@ Data    		: 17/05/2015
 
 main()
 {
-    srand((unsigned)time(0));
     int Tasto,
         Da,
         A,
@@ -30,8 +29,7 @@ main()
 
         //Stampo il menu`
         cout << "\t1 - Genera Vettore Random\n";
-        cout << "\t2 - QuickSort iterativo\n";
-        cout << "\t3 - QuickSort ricorsivo\n";
+        cout << "\t2 - Ordina tramite QuickSort\n";
         cout << "\nESC to exit";
 
         //Menu`
@@ -58,15 +56,6 @@ main()
                 Stampa_Array_int (Array, N);
                 QuickSort_Ricorsivo (Array, 0, N);
                 cout << "\nArray dopo l'ordinamento:\n";
-                Stampa_Array_int (Array, N);
-                _getch();
-                break;
-            case '3' :
-                system(CLEAR);
-                cout << "Array prima del'ordinamento:\n";
-                Stampa_Array_int (Array, N);
-
-                cout << "Array dopo l'ordinamento:\n";
                 Stampa_Array_int (Array, N);
                 _getch();
                 break;

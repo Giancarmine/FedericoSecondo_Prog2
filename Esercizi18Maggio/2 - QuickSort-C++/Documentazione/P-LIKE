@@ -1,0 +1,39 @@
+
+/*===================================================================================================
+
+Autore  	    : Carmine Cuofano											Matricola: N86001700
+Programma   	: QuickSort
+Data    		: 17/05/2015
+
+-----------------------------------------------------------------------------------------------------*/
+
+procedure QuickSort_Ricorsivo (in: Array, Inizio, Fine out: Array)
+	VAR I, J, Pivot, Inizio, Fine :Integer
+	VAR Array : Array of integer (1....N) 
+begin
+	if Fine>Inizio then
+		I := Inizio
+		J := Fine
+		Pivot := Array[(Inizio+Fine)/2]
+		while I<=J then
+			while Array[I] < Pivot then
+				I := I+1
+			endwhile
+			while Array[J] > Pivot then
+				J := J-1
+			endwhile
+			if I<=J then
+				*Restituisce l'Array con gli elementi indicati scambiati*
+				Scambia_Array_int(Array,I,J)
+                I := I+1
+                J := J-1
+			endif
+		endwhile
+		if Inizio<J then
+            QuickSort_Ricorsivo(Array,Inizio,J)
+		endif
+		if I<Fine then
+            QuickSort_Ricorsivo(Array,I,Fine);
+        endif
+	endif
+end

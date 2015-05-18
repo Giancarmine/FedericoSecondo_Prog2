@@ -22,17 +22,14 @@ Programma   	: Genera Random un Array di integer
 Data    		: 29/04/2015
 
 -----------------------------------------------------------------------------------------------------*/
-void Array_Random_Int (int Array[], int &N, int Da, int A)
+void Array_Random_Int (int Array[], int N, int Da, int A)
 {
-    int I ;
-
+    int i;
     //NOTA : Intervallo di Random = da "A" ad "A-Da"
-    //Alloco l'Array dinamicamente
-    Array = new int[N];
+    srand((unsigned)time(0));
 
-    //Lo riempo randomicamente
-    for (I=0; I<N; I++){
-        Array[I] = (rand()%A)+Da;
+    for(int i=0; i<N; i++){
+        Array[i] = (rand()%A)+Da;
     }
 }
 
@@ -56,8 +53,8 @@ void Stampa_Array_int (int Array[], int N)
 /*===================================================================================================
 
 Autore  	    : Carmine Cuofano											Matricola: N86001700
-Programma   	: QuickSort iterativo
-Data    		: 27/04/2015
+Programma   	: QuickSort
+Data    		: 17/05/2015
 
 -----------------------------------------------------------------------------------------------------*/
 
@@ -71,8 +68,12 @@ void QuickSort_Ricorsivo (int Array[] , int Inizio , int Fine)
         J = Fine ;
         Pivot = Array[(Inizio+Fine)/2] ;
         while (I<=J){
-            while(Array[I] < Pivot)   I++; //Conto gli elementi minori del pivot
-            while(Array[J] > Pivot)   J--; //Conto gli elementi maggiori del pivot
+            while(Array[I] < Pivot){
+                I++; //Conto gli elementi minori del pivot
+            }
+            while(Array[J] > Pivot){
+                J--; //Conto gli elementi maggiori del pivot
+            }
             /*================================================
             Se I è <= J cioè se l'elemento puntato da I
             è maggiore del pivot , e di conseguenza quello
@@ -80,13 +81,16 @@ void QuickSort_Ricorsivo (int Array[] , int Inizio , int Fine)
             ------------------------------------------------*/
             if(I<=J){
                 Scambia_Array_int(Array,I,J);//...scambiali
-                I++ ; J--;
+                I++;
+                J--;
             }
         }
         //Ripeti per gli elementi minori del pivot poi per quelli maggiori del pivot
-        if (Inizio<J)
+        if (Inizio<J){
             QuickSort_Ricorsivo(Array,Inizio,J);
-        if (I<Fine)
+        }
+        if (I<Fine){
             QuickSort_Ricorsivo(Array,I,Fine);
+        }
     }
 }

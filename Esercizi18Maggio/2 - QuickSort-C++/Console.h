@@ -2,8 +2,10 @@
 #include <String>
 #include <cstdlib>
 #include <ctime>
+#include <algorithm>
 
 #include <conio.h>
+
 
 
 /*---------------------------------------------------------------------------------------
