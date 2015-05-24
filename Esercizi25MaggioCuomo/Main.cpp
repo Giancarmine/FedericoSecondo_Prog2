@@ -1,5 +1,5 @@
 #include "Console.h"
-#include "Lista.h"
+#include "DNA.h"
 
 using namespace std;
 
@@ -14,10 +14,10 @@ Data    		: 27/04/2015
 main()
 {
     int Tasto,
-        Key,
         Trovato = 0;
 
-    Nodo *Head;
+    Dna *Head;
+    char Key;
 
     Head = NULL;
 
@@ -27,13 +27,13 @@ main()
         system(CLEAR);
 
         //Title
-        cout << "Inserimento Ordinato in lista\n\n";
+        cout << "Sequenze A-T-T\n\n";
 
         //Stampo il menu`
         cout << "\t1 - Stampa\n";
-        cout << "\t2 - Inserisci in ordine iterativo\n";
+        cout << "\t2 - Inserisci elemento\n";
         cout << "\t3 - Elimina elemento\n";
-        cout << "\t4 - Inserisci in ordine ricorsivo\n";
+        cout << "\t4 - Conta sequenze A-T-T\n";
         cout << "\nESC to exit";
 
         //Menu`
@@ -43,20 +43,23 @@ main()
             case '1' ://Stampa
                 system(CLEAR);
                 if (Head != NULL){
-                    cout << "Gli Elementi presenti in lista sono:\n";
-                    Stampa_Lista(Head);
+                    cout << "Gli Elementi del DNA sono:\n";
+                    Stampa_DNA(Head);
                 }
                 else{
-                    cout << "La Lista e` vuota";
+                    cout << "La Lista e`vuota";
                 }
                 _getch();
                 break;
             case '2' :
                 system(CLEAR);
-                //Definisci l'elemento a cui accodare l'elemento
-                cout << "Inserisci il valore del elemento da aggiungere: ";
-                cin >> Key;
-                Head = Aggiungi_Lista_Ordinata_Iterativo(Head, Key);
+                do{
+                    //Definisci l'elemento a cui accodare l'elemento
+                    cout << "Inserisci il valore del elemento da aggiungere [A-G-T-C]: ";
+                    cin >> Key;
+                }
+                while(Key == || Key == || Key == || Key == );
+                Head = Push_DNA(Head, Key);
                 _getch();
                 break;
             case '3' ://Elimina un elemento definito dal utente
@@ -67,7 +70,6 @@ main()
                     cout << "Inserisci il valore da eliminare: ";
                     cin >> Key;
                     Trovato = 0;
-                    Head = Elimina_Lista(Head, Key, Trovato);
                     if (Trovato == 0){
                         cout << "Elemento NON TROVATO!";
                     }
@@ -80,9 +82,6 @@ main()
             case '4' ://Inserimento ordinato Ricorsivo
                 system(CLEAR);
                 //Definisci l'elemento a cui accodare l'elemento
-                cout << "Inserisci il valore del elemento da aggiungere: ";
-                cin >> Key;
-                Head = Aggiungi_Lista_Ordinata_Ricorsivo(Head, Key);
                 _getch();
                 break;
         }
@@ -90,4 +89,4 @@ main()
     while(Tasto != ESC);
 }
 
-#include "Lista.cpp"
+#include "DNA.cpp"

@@ -1,5 +1,5 @@
 #include <iostream>
-#include <String>
+#include <string>
 #include <cstdlib>
 
 #include <conio.h>
