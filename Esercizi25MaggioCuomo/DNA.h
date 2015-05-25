@@ -8,3 +8,4 @@ typedef struct dna{
 //Protoripi
 void Stampa_DNA(Dna* Head);
 Dna* Push_DNA(Dna* Head, char Key);
+Dna* Pop_Dna(Dna* Head);

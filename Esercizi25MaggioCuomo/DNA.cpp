@@ -51,20 +51,15 @@ Autore  	    : Carmine Cuofano											Matricola: N86001700
 Programma   	: Elimina Nodo in testa
 Data    		: 27/04/2015
 
+-----------------------------------------------------------------------------------------------------*/
 
 Dna* Pop_Dna(Dna* Head){
+    Dna* App;
 
-    if(Head->info == Key){
-        App = Head->link ;
-        delete Head;
-        cout << "Elemento ELIMINATO!";
-        Trovato = 1;
-		return App;
-    }
-
-    if(Head->link != NULL || Trovato == 0){
-        Head->link = Elimina_Lista(Head->link, Key, Trovato);
-		return Head;
-    }
+    cout << "L`Elemento e`: " << Head->info << endl;
+    App = Head->link ;
+    delete Head;
+    cout << "Elemento ELIMINATO!";
+	return App;
 }
------------------------------------------------------------------------------------------------------*/
+

@@ -58,7 +58,10 @@ main()
                     cout << "Inserisci il valore del elemento da aggiungere [A-G-T-C]: ";
                     cin >> Key;
                 }
-                while(Key == || Key == || Key == || Key == );
+                while(Key != 'A' && Key != 'a' &&
+                      Key != 'G' && Key != 'g' &&
+                      Key != 'T' && Key != 't' &&
+                      Key != 'C' && Key != 'c');
                 Head = Push_DNA(Head, Key);
                 _getch();
                 break;
@@ -66,13 +69,7 @@ main()
                 system(CLEAR);
                 //Se la lista esiste
                 if (Head != NULL){
-                    //Definisci l'elemento da eliminare
-                    cout << "Inserisci il valore da eliminare: ";
-                    cin >> Key;
-                    Trovato = 0;
-                    if (Trovato == 0){
-                        cout << "Elemento NON TROVATO!";
-                    }
+                    Head = Pop_Dna(Head);
                 }
                 else{
                     cout << "La Lista e` vuota";
