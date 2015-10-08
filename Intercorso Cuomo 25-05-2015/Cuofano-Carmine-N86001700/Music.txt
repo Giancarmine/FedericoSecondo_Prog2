@@ -1,0 +1,12 @@
+CD 1
+Durata CD 1: 3173
+1. "The Wall" - Pink Floyd
+Secondi: 2222
+2. "I Will Survive" - Gloria Gaynor
+Secondi : 196
+CD 2
+Durata CD 2: 3561
+1. "Gloria" - Laura Branigan
+Secondi: 289
+2. "The End" - Doors
+Secondi : 221

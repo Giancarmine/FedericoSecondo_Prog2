@@ -63,3 +63,26 @@ Dna* Pop_Dna(Dna* Head){
 	return App;
 }
 
+/*===================================================================================================
+
+Autore  	    : Carmine Cuofano											Matricola: N86001700
+Programma   	: Conta le sequenze nello Stack in modo
+Data    		: 27/04/2015
+
+-----------------------------------------------------------------------------------------------------*/
+
+void Conta_Seq_ATT(Dna* Head, int &Count){
+    Dna* Successivo;
+
+    Successivo = Head->link;
+    if (Head->info == 'A' || Head->info == 'a'){
+        if (Successivo->info == 'T' || Successivo->info  == 't'){
+            if (Successivo->link->info == 'T' || Successivo->link->info  == 't'){
+                Count++;
+            }
+        }
+    }
+    if (Successivo->link == NULL){
+        Conta_Seq_ATT (Successivo, Count);
+    }
+}

@@ -1,7 +1,6 @@
 #include "Console.h"
-#include "DNA.h"
-
 using namespace std;
+#include "Music.h"
 
 /*===================================================================================================
 
@@ -14,10 +13,10 @@ Data    		: 27/04/2015
 main()
 {
     int Tasto,
-        Count = 0;
+        Costo = 0;
 
-    Dna *Head;
-    char Key;
+    Playlist* Head;
+    string Key, NomeFile;
 
     Head = NULL;
 
@@ -27,70 +26,69 @@ main()
         system(CLEAR);
 
         //Title
-        cout << "Sequenze A-T-T\n\n";
+        cout << "Music PLAYLIST\n\n";
 
         //Stampo il menu`
-        cout << "\t1 - Stampa\n";
-        cout << "\t2 - Inserisci elemento\n";
-        cout << "\t3 - Pop elemento (Elimina)\n";
-        cout << "\t4 - Conta sequenze A-T-T\n";
+        cout << "\t1 - Stampa PLAYLIST\n";
+        cout << "\t2 - Genera PLAYLIST\n";
+        cout << "\t3 - Costo PLAYLIST\n";
+        cout << "\t4 - Aggiorna PLAYLIST [INCOMPLETA]\n";
         cout << "\nESC to exit";
 
         //Menu`
         Tasto = _getch();
         switch(Tasto)
         {
-            case '1' ://Stampa
+            case '1' : // Stampa PLAYLIST
                 system(CLEAR);
+                //Se la PLAYLIST esiste
                 if (Head != NULL){
-                    cout << "Gli Elementi del DNA sono:\n";
-                    Stampa_DNA(Head);
+                    Stampa_PLAYLIST (Head);
                 }
                 else{
-                    cerr << "La Lista e`vuota";
+                    cerr << "La PLAYLIST e` vuota";
                 }
                 _getch();
                 break;
-            case '2' :
+            case '2' : // Genera PLAYLIST
                 system(CLEAR);
-                do{
-                    //Definisci l'elemento a cui accodare l'elemento
-                    cout << "Inserisci il valore del elemento da aggiungere [A-G-T-C]: ";
-                    cin >> Key;
+                if (Head == NULL){
+                    Head = new Playlist;
+                    Head->Link = NULL;
                 }
-                while(Key != 'A' && Key != 'a' &&
-                      Key != 'G' && Key != 'g' &&
-                      Key != 'T' && Key != 't' &&
-                      Key != 'C' && Key != 'c');
-                Head = Push_DNA(Head, Key);
+                NomeFile = 'Music.txt';
+                Head = My_Music (NomeFile, Head);
                 _getch();
                 break;
-            case '3' ://Pop dallo stack
+            case '3' : // Costo PLAYLIST
                 system(CLEAR);
-                //Se la lista esiste
+                //Se la PLAYLIST esiste
                 if (Head != NULL){
-                    Head = Pop_Dna(Head);
+                    Costo = 0;
+                    Reproduction_time (Head, Costo);
+                    cout << "Il costo della PLAYLIST e`: " << Costo << " cent" << endl;
                 }
                 else{
-                    cerr << "La Lista e` vuota";
+                    cerr << "La PLAYLIST e` vuota";
                 }
                 _getch();
                 break;
+                /*
             case '4' ://
                 system(CLEAR);
                 //Se la lista esiste
                 if (Head != NULL){
-                    Conta_Seq_ATT(Head, Count);
-                    cout << "Sono stati trovati: " << Count << " sequenze A-T-T";
+
                 }
                 else{
                     cerr << "La Lista e` vuota";
                 }
                 _getch();
                 break;
+                */
         }
     }
     while(Tasto != ESC);
 }
 
-#include "DNA.cpp"
+#include "Music.cpp"
